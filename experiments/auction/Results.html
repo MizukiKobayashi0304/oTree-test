@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+
+{% block title %}Results{% endblock %}
+{% block content %}
+    <br><br>
+    {% if player.is_winner %}
+        <div class="alert alert-success" role="alert">
+        You placed the highest bid.
+        </div>
+    {% else %}
+       <div class="alert alert-warning" role="alert">
+        You did not place the highest bid.
+        </div>
+    {% endif %}
+    <br><br>
+
+<table style="width: 103.236%; height: 241px;" border="1px" frame="border" rules="none" cellspacing="0px" cellpadding="0px">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: right;"><strong>Your Value:</strong></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 40%;">{{ player.value }}</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: right;"><strong>Your Bid:</strong></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 40%;">{{ player.bid }}</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: right;"><strong>Highest Bid:</strong></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 40%;">{{ group.highest_bid }}</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: right;"><strong>Second Highest Bid (Price):</strong></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 40%;">{{ group.second_highest_bid }}</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: right;"><strong>Your Profit:</strong></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 40%;">{{ player.payoff }}</td>
+</tr>
+</tbody>
+</table>
+
+    {% next_button %}
+
+{% endblock %}

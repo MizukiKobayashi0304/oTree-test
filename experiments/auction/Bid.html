@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+
+{% block content %}
+
+<p>This is period {{ subsession.round_number }} of {{ Constants.num_rounds }}.</p>
+
+<p>The value of your item is {{ player.value }}. Please submit your bid below.</p>
+
+
+{% formfields %}
+
+{% next_button %}
+{% endblock %}
